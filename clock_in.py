@@ -31,7 +31,7 @@ def login():
     token, captcha = captchaOCR()
     login_info = {"Code":args.username,"Password":args.password,"VerCode":captcha,"Token":token}
     
-    set_cookie = requests.post(login_url, json=login_info).headers
+    set_cookie = requests.post(login_url, json=login_info).headers['set-cookie']
     regex = r"\.ASPXAUTH=(.*?);"
     ASPXAUTH = re.findall(regex, set_cookie)[2]
 
