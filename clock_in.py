@@ -82,9 +82,4 @@ def main():
 
     return isSucccess
 
-for i in range(10):
-    try:    
-        main()
-        break
-    except:
-        continue
+main()
